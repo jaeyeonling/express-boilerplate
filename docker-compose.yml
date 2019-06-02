@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  mysql:
+    image: mysql:8
+    container_name: express-boilerplate-mysql-8
+    command: --default-authentication-plugin=mysql_native_password
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_USER=user
+      - MYSQL_PASSWORD=password
+      - MYSQL_DATABASE=boilerplate
+      - MYSQL_ROOT_HOST=%
+    ports:
+      - '3307:3306'
+    healthcheck:
+      test: ['CMD', 'mysqladmin', 'ping', '-h', 'localhost']
+      interval: 10s
+      timeout: 10s
+      retries: 10
+
+  redis:
+    image: redis:5
+    container_name: express-boilerplate-redis-5
+    ports:
+      - '6380:6379'
+    volumes:
+      - ./volume/redis/data:/data
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      interval: 10s
+      timeout: 10s
+      retries: 10

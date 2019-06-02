@@ -1,0 +1,35 @@
+{
+  "name": "express-boilerplate",
+  "version": "0.0.1",
+  "main": "index.js",
+  "repository": "https://github.com/jaeyeonling/express-boilerplate",
+  "author": "Jaeyeon Kim <jaeyeonling@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "engines": {
+    "node": "12.x.x",
+    "yarn": "1.x.x"
+  },
+  "scripts": {
+    "start": "node index",
+    "test": "NODE_ENV=test mocha 'test/**/*.spec.js'",
+    "test:watch": "yarn run test -w"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "passport": "^0.4.0",
+    "passport-google-oauth": "^2.0.0",
+    "passport-local": "^1.0.0",
+    "sequelize": "^5.8.7",
+    "sqlite3": "^4.0.8"
+  },
+  "devDependencies": {
+    "mocha": "^6.1.4",
+    "pm2": "^3.5.1",
+    "should": "^13.2.3",
+    "supertest": "^4.0.2"
+  }
+}

@@ -13,6 +13,7 @@ docker-compose -f docker-compose.yml up
 ```
 
 ## 폴더 구조
+```
 .
 +-- config            
 +-- database          
@@ -25,6 +26,7 @@ docker-compose -f docker-compose.yml up
 +-- utils             
 +-- test              
 +-- index.js          
+```
 
 ## TODO
 * IDE 셋팅

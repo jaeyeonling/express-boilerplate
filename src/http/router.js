@@ -6,13 +6,13 @@ const compression = require('compression')
 const morgan = require('morgan')
 const statusMonitor = require('express-status-monitor')
 
-const config = require('../../../config')
-const globalRouter = require('../../domain/global/global.router')
-const authRouter = require('../../domain/auth/auth.router')
-const testRouter = require('../../domain/test/test.router')
-const passport = require('../../security/passport')
-const errorHandler = require('./error.handler')
-const notFound = require('./not.found')
+const config = require('../../config')
+const globalRouter = require('../domain/global/global.router')
+const authRouter = require('../domain/auth/auth.router')
+const testRouter = require('../domain/test/test.router')
+const passport = require('../security/passport')
+const errorHandler = require('./handlers/error.handler')
+const notFound = require('./handlers/not.found')
 
 
 //

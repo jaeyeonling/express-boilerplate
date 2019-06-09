@@ -42,6 +42,8 @@ docker-compose -f docker-compose.yml up
 
 * 패스워드 초기화 (SMTP)
 
+* 파일 업로드
+
 * Validation
 
 ## TODO
@@ -50,3 +52,4 @@ docker-compose -f docker-compose.yml up
 
 * Docker
 
+* S3 Upload

@@ -5,6 +5,7 @@ const signOut = require('./sign.out')
 const leave = require('./leave')
 const passwordReset = require('./password.reset')
 const passwordResetConfirm = require('./password.reset.confirm')
+const attach = require('./attach')
 
 //
 //
@@ -17,5 +18,6 @@ module.exports = {
   signOut,
   leave,
   passwordReset,
-  passwordResetConfirm
+  passwordResetConfirm,
+  attach
 }

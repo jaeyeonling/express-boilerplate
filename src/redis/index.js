@@ -6,10 +6,18 @@ const config = require('../../config')
 //
 //
 
-const client = redis.createClient(
-  config.redis.port,
-  config.redis.host
-)
+const getClient = () => {
+  if (config.test) {
+    return require("redis-mock").createClient()
+  }
+
+  return redis.createClient(
+    config.redis.port,
+    config.redis.host
+  )
+}
+
+const client = getClient()
 
 client.on('connect', () => console.info('Redis client connected'))
 client.on('error', err => console.error('Redis error: ', err))

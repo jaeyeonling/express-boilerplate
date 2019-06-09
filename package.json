@@ -45,6 +45,7 @@
   "devDependencies": {
     "mocha": "^6.1.4",
     "pm2": "^3.5.1",
+    "redis-mock": "^0.44.0",
     "should": "^13.2.3",
     "supertest": "^4.0.2"
   }

@@ -1,31 +1,33 @@
 require('should')
 
-const db = require('../../../database')
-const modelLoader = require('../../../database/model.loader')
+const db = require('../../../src/database')
+const entityLoader = require('../../../src/database/entity.loader')
 
 //
 //
 //
 
 describe('유저', () => {
-  before(async () => await modelLoader.sync({ sequelize: db.sequelize }))
+  before(async () => await entityLoader.sync({ sequelize: db.sequelize }))
 
   it('데이터베이스에 저장한다.', () => db.User.create({ name: '등록' }))
 
   it('데이터베이스에 저장된 유저 한명을 조회한다.', async () => {
     const name = 'findTest'
+    const email = 'email'
 
     const user = await db.User.create({
-      name
+      name,
+      email
     })
     const findUser = await db.User.findOne({
       where: {
         name
-
       }
     })
 
     user.name.should.equal(findUser.name)
+    user.email.should.equal(findUser.email)
   })
 
   it('데이터베이스에 저장된 유저 리스트를 조회한다.', async () => {
@@ -35,9 +37,11 @@ describe('유저', () => {
 
   it('데이터베이스에 유저를 수정한다.', async () => {
     const changeName = 'world'
+    const email = 'email'
 
     const user = await db.User.create({
-      name: 'hello'
+      name: 'hello',
+      email
     })
     user.name = changeName
 

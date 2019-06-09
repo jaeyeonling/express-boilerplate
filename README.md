@@ -6,6 +6,8 @@
 * Sequelize
 * MySQL 8
 * Redis 5
+* JWT
+* SMTP
 
 ## Docker
 ```
@@ -16,37 +18,35 @@ docker-compose -f docker-compose.yml up
 ```
 .
 +-- config            
-+-- database          
-  +-- model.loader
-  +-- index           
-  +-- models          
-+-- domain            
-+-- http              
-+-- security          
-+-- utils             
++-- src
+  +-- database          
+  +-- domain                // Business logic
+  +-- exception             // Error
+  +-- http              
+  +-- redis   
+  +-- security          
+  +-- type
+  +-- utils             
 +-- test              
 +-- index.js          
 ```
 
-## TODO
-* IDE 셋팅
-
-* 도커 셋팅
-
-* 배포
-
-* 레디스 셋팅
-
-* 서버 셋팅
-  * Express
+## 기능
 
 * 회원가입
-  * 유저
-  * 인증정보
 
-* 로그인
-  * JWT
-  * 자체 로그인
-  * 구글 로그인
-  * Passport
+* Passport (JWT)
+  * Local
+  * Google
+  * Kakao
+
+* 패스워드 초기화 (SMTP)
+
+* Validation
+
+## TODO
+
+* CI/CD
+
+* Docker
 

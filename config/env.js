@@ -33,6 +33,15 @@ const getBoolean = (key, failback) => {
   return failback
 }
 
+const getArray = (key, failback) => {
+  const value = get(key, failback)
+  if (value) {
+    return value.split(',')
+  }
+
+  return failback
+}
+
 dotenv.config()
 
 //
@@ -42,5 +51,6 @@ dotenv.config()
 module.exports = {
   get,
   getInt,
-  getBoolean
+  getBoolean,
+  getArray
 }

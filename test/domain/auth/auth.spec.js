@@ -1,0 +1,3 @@
+describe('Auth', () => {
+  require('./local')
+})

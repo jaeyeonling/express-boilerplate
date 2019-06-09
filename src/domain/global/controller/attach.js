@@ -1,6 +1,7 @@
 const HttpStatus = require('http-status')
 
 const db = require('../../../database')
+const config = require('../../../../config')
 const Exception = require('../../../exception')
 
 //
@@ -31,13 +32,13 @@ const attach = async (req, res) => {
     for (let i = 0; i < files.length; i++) {
       const {
         originalname: originalName,
-        path: saveName
+        path
       } = files[i]
 
       const attachFile = await db.AttachFile.create(
         {
           originalName,
-          saveName,
+          url: `${config.web.host}:${config.web.port}/${path}`,
           owner
         },
         options

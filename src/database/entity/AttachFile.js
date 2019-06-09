@@ -6,7 +6,7 @@ module.exports = (
     type: DataTypes.STRING,
     allowNull: false
   }
-  const saveName = {
+  const url = {
     type: DataTypes.STRING,
     allowNull: false
   }
@@ -16,7 +16,7 @@ module.exports = (
   }
   const columns = {
     originalName,
-    saveName,
+    url,
     owner
   }
 
